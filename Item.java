@@ -43,4 +43,12 @@ public class Item {
         }
     }
 
+    // ★追加：購入前の総合チェック
+    public void validatePurchase(boolean isAdult) {
+        // 親クラス（通常の商品）としての基本ルール：在庫がなければエラー
+        if (this.stock <= 0) {
+            throw new IllegalStateException("在庫がありません");
+        }
+    }
+
 }
